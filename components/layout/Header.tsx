@@ -183,7 +183,7 @@ export function Header({ title }: { title?: string }) {
               </button>
 
               {showNotifications && (
-                <div className="absolute right-0 top-12 w-80 max-w-[calc(100vw-2rem)] rounded-lg border border-zinc-200 bg-white shadow-xl z-50">
+                <div className="fixed left-4 right-4 top-16 z-50 rounded-lg border border-zinc-200 bg-white shadow-xl sm:absolute sm:left-auto sm:right-0 sm:top-12 sm:w-80">
                   <div className="flex items-center justify-between border-b border-zinc-200 p-4">
                     <h3 className="text-sm font-bold text-zinc-900">Notifications</h3>
                     <button
@@ -295,7 +295,7 @@ export function Header({ title }: { title?: string }) {
 
       {showMobileMenu && (
         <div className="fixed inset-0 z-40 bg-black/50 lg:hidden" onClick={() => setShowMobileMenu(false)}>
-          <div className="absolute right-4 top-20 w-64 rounded-lg border border-zinc-200 bg-white shadow-xl" onClick={(e) => e.stopPropagation()}>
+          <div className="absolute left-4 right-4 top-16 w-auto rounded-lg border border-zinc-200 bg-white shadow-xl sm:left-auto sm:w-64" onClick={(e) => e.stopPropagation()}>
             <div className="border-b border-zinc-200 p-4">
               <div className="flex items-center gap-3">
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-orange-100 to-zinc-200 text-sm font-black">
