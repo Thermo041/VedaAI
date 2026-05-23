@@ -263,23 +263,23 @@ export default function RubricBuilderPage() {
           Add Criterion
         </button>
 
-        <div className="mt-6 flex gap-3">
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
           <button
             onClick={() => router.back()}
-            className="rounded-full border border-zinc-300 px-6 py-3 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50"
+            className="w-full sm:w-auto rounded-full border border-zinc-300 px-6 py-3 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50"
           >
             Cancel
           </button>
           <button
             onClick={handleDownload}
-            className="rounded-full border border-orange-500 bg-white px-6 py-3 text-sm font-bold text-orange-600 transition hover:bg-orange-50"
+            className="w-full sm:w-auto rounded-full border border-orange-500 bg-white px-6 py-3 text-sm font-bold text-orange-600 transition hover:bg-orange-50"
           >
             Download
           </button>
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 py-3 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50"
+            className="flex-1 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 py-3 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50"
           >
             <Sparkles className="h-5 w-5" />
             {isGenerating ? "Saving..." : "Save Rubric"}
