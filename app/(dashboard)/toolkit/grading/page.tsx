@@ -180,14 +180,14 @@ Be fair, constructive, and specific in your feedback.`;
         <div className="mt-6 flex flex-wrap gap-3">
           <button
             onClick={() => router.back()}
-            className="flex-1 whitespace-nowrap rounded-full border border-zinc-300 px-6 py-3 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50"
+            className="flex-1 sm:flex-none whitespace-nowrap rounded-full border border-zinc-300 px-6 py-3 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50"
           >
             Cancel
           </button>
           <button
             onClick={handleGrade}
             disabled={isGrading}
-            className="flex-[2] whitespace-nowrap inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50 min-w-[200px]"
+            className="flex-1 sm:flex-none whitespace-nowrap inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50 min-w-[200px]"
           >
             <Sparkles className="h-5 w-5" />
             {isGrading ? "Grading..." : "Grade with AI"}
@@ -237,7 +237,7 @@ Be fair, constructive, and specific in your feedback.`;
                   navigator.clipboard.writeText(text);
                   alert("Feedback copied to clipboard!");
                 }}
-                className="flex-1 whitespace-nowrap rounded-full border border-orange-500 bg-white px-6 py-3 text-sm font-bold text-orange-600 transition hover:bg-orange-50 min-w-[150px]"
+                className="flex-1 sm:flex-none whitespace-nowrap rounded-full border border-orange-500 bg-white px-6 py-3 text-sm font-bold text-orange-600 transition hover:bg-orange-50 min-w-[150px]"
               >
                 Copy Feedback
               </button>
@@ -255,7 +255,7 @@ Be fair, constructive, and specific in your feedback.`;
                   URL.revokeObjectURL(url);
                   addNotification(`Grading feedback downloaded`);
                 }}
-                className="flex-[2] whitespace-nowrap rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600 min-w-[200px]"
+                className="flex-1 sm:flex-none whitespace-nowrap rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600 min-w-[200px]"
               >
                 Download Feedback
               </button>

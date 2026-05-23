@@ -312,14 +312,14 @@ export default function GroupsPage() {
             <div className="mt-6 flex flex-wrap gap-3">
               <button
                 onClick={() => setShowCreateModal(false)}
-                className="flex-1 whitespace-nowrap rounded-full border border-zinc-300 py-2 px-6 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50 min-w-[120px]"
+                className="flex-1 sm:flex-none whitespace-nowrap rounded-full border border-zinc-300 py-2 px-6 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50 min-w-[120px]"
               >
                 Cancel
               </button>
               <button
                 onClick={handleCreateGroup}
                 disabled={isCreating}
-                className="flex-[2] whitespace-nowrap rounded-full bg-zinc-950 py-2 px-6 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50 min-w-[160px]"
+                className="flex-1 sm:flex-none whitespace-nowrap rounded-full bg-zinc-950 py-2 px-6 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50 min-w-[160px]"
               >
                 {isCreating ? "Creating..." : "Create Group"}
               </button>
