@@ -20,6 +20,21 @@ VedaAI is a full-stack, AI-powered platform built exclusively for teachers. It d
 - **Background Jobs:** BullMQ & Upstash Redis
 - **AI Providers:** Groq (Llama-3), Google Gemini 2.5 Flash
 
+## 🏗️ Architecture & Approach
+
+### **Architecture Overview**
+This application utilizes a modern, decoupled Full-Stack architecture:
+1. **Client (Next.js/React):** Manages user interactions, form validations, and global state via **Zustand**. Real-time progress bars are rendered via **Socket.IO** clients connecting to the backend.
+2. **API Layer (Express/Next.js routes):** Handles incoming REST requests. Instead of blocking the main thread while the LLM generates content, the API instantly queues a job using **BullMQ** and returns a `jobId`.
+3. **Message Queue & Cache (Redis):** Acts as the backbone for BullMQ, holding pending AI generation jobs and caching frequently accessed static assignment templates.
+4. **Worker Process:** A background worker constantly polls the Redis queue, takes jobs, communicates with the LLM APIs (Gemini/Groq), parses the responses into structured JSON, and saves the final result to **MongoDB**.
+5. **Real-time Notifications:** Once the background worker saves the database record, it triggers an event over **Socket.IO** to notify the specific user's browser that their assessment is ready to view.
+
+### **Technical Approach**
+- **Structured LLM Outputs:** Rather than risking raw, malformed text responses from AI models, we heavily utilize JSON-schema enforcement in our prompts to guarantee structured responses (Sections, Difficulty, Marks).
+- **Graceful Error Handling:** If an LLM response times out or hallucinates data, the background worker safely catches the error, re-queues the job if necessary, and alerts the frontend gracefully.
+- **Responsive Fluid UI:** The user interface heavily utilizes Tailwind CSS `flex-wrap` and mobile-first container sizing to ensure the complex assessment layouts remain beautiful and readable on both Desktop and Mobile devices.
+
 ## ⚙️ Setup & Deployment (Render)
 
 This application is fully optimized for deployment on [Render](https://render.com).
