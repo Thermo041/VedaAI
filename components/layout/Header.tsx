@@ -82,7 +82,7 @@ export function Header({ title }: { title?: string }) {
 
   return (
     <>
-      <header className="no-print sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:relative lg:z-50 lg:px-6 lg:pt-4">
+      <header className="no-print sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-zinc-200 lg:relative lg:bg-transparent lg:border-none lg:px-6 lg:pt-4">
         <div className="hidden h-14 items-center justify-between rounded-lg border border-white/75 bg-white/90 px-5 shadow-sm backdrop-blur-xl lg:flex">
           <div className="flex items-center gap-3">
             <button
@@ -161,24 +161,24 @@ export function Header({ title }: { title?: string }) {
           </div>
         </div>
 
-        <div className="flex h-14 items-center justify-between rounded-lg border border-white/75 bg-white/95 px-3 shadow-sm backdrop-blur-xl lg:hidden">
+        <div className="flex h-16 items-center justify-between px-4 lg:hidden">
           <Link href="/assignments" className="flex items-center gap-2">
-            <div className="relative h-9 w-9 overflow-hidden rounded-md bg-zinc-950">
+            <div className="relative h-8 w-8 overflow-hidden rounded-md bg-zinc-950">
               <img src="/logo.png" alt="VedaAI" className="h-full w-full object-cover" />
             </div>
-            <span className="text-2xl font-black tracking-tight">VedaAI</span>
+            <span className="text-xl font-black tracking-tight">VedaAI</span>
           </Link>
           <div className="flex items-center gap-2">
             <div className="relative">
               <button
                 type="button"
                 onClick={() => setShowNotifications(!showNotifications)}
-                className="relative grid h-10 w-10 place-items-center rounded-full bg-zinc-50 text-zinc-900"
+                className="relative grid h-9 w-9 place-items-center rounded-full bg-zinc-100 text-zinc-900"
                 aria-label="Notifications"
               >
                 <Bell className="h-5 w-5" />
                 {unreadCount > 0 && (
-                  <span className="absolute right-2 top-2 h-2.5 w-2.5 rounded-full bg-orange-500 ring-2 ring-white" />
+                  <span className="absolute right-2 top-2 h-2 w-2 rounded-full bg-orange-500 ring-2 ring-white" />
                 )}
               </button>
 
@@ -222,14 +222,14 @@ export function Header({ title }: { title?: string }) {
             </div>
             <Link
               href="/settings"
-              className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-orange-100 to-zinc-200 text-xs font-black"
+              className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-orange-100 to-zinc-200 text-xs font-black"
             >
               {avatar}
             </Link>
             <button
               type="button"
               onClick={() => setShowMobileMenu(!showMobileMenu)}
-              className="grid h-10 w-10 place-items-center rounded-full text-zinc-900"
+              className="grid h-9 w-9 place-items-center rounded-full text-zinc-900"
               aria-label="Open menu"
             >
               <Menu className="h-6 w-6" />
@@ -237,30 +237,30 @@ export function Header({ title }: { title?: string }) {
           </div>
         </div>
 
-        <div className="mt-5 flex items-center justify-center lg:hidden">
+        <div className="flex items-center justify-center pb-3 lg:hidden">
           {showBack && (
             <button
               type="button"
               onClick={() => router.back()}
-              className="absolute left-6 grid h-12 w-12 place-items-center rounded-full bg-white/72 text-zinc-800 shadow-sm"
+              className="absolute left-4 grid h-8 w-8 place-items-center rounded-full bg-zinc-100 text-zinc-800 shadow-sm"
               aria-label="Go back"
             >
-              <ArrowLeft className="h-6 w-6" />
+              <ArrowLeft className="h-4 w-4" />
             </button>
           )}
-          <div className="text-lg font-black text-zinc-900">{label}</div>
+          <div className="text-sm font-black text-zinc-900">{label}</div>
         </div>
       </header>
 
       <Link
         href="/assignments/create"
-        className="no-print fixed bottom-28 right-5 z-30 grid h-14 w-14 place-items-center rounded-full bg-orange-500 text-white shadow-2xl shadow-orange-500/40 lg:hidden"
+        className="no-print fixed bottom-24 right-5 z-30 grid h-14 w-14 place-items-center rounded-full bg-orange-500 text-white shadow-2xl shadow-orange-500/40 lg:hidden"
         aria-label="Create assignment"
       >
         <Plus className="h-6 w-6" />
       </Link>
 
-      <nav className="no-print fixed bottom-4 left-4 right-4 z-30 grid h-20 grid-cols-5 rounded-lg bg-zinc-950 px-2 shadow-2xl shadow-black/30 lg:hidden">
+      <nav className="no-print fixed bottom-0 left-0 right-0 z-30 grid h-[4.5rem] grid-cols-5 border-t border-zinc-800 bg-zinc-950 px-2 pb-safe shadow-2xl lg:hidden">
         {mobileTabs.map((item) => {
           const isActive =
             pathname === item.href ||
