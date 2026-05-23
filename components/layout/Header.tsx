@@ -172,7 +172,10 @@ export function Header({ title }: { title?: string }) {
             <div className="relative">
               <button
                 type="button"
-                onClick={() => setShowNotifications(!showNotifications)}
+                onClick={() => {
+                  setShowNotifications(!showNotifications);
+                  if (!showNotifications) setShowMobileMenu(false);
+                }}
                 className="relative grid h-9 w-9 place-items-center rounded-full bg-zinc-100 text-zinc-900"
                 aria-label="Notifications"
               >
@@ -228,7 +231,10 @@ export function Header({ title }: { title?: string }) {
             </Link>
             <button
               type="button"
-              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              onClick={() => {
+                setShowMobileMenu(!showMobileMenu);
+                if (!showMobileMenu) setShowNotifications(false);
+              }}
               className="grid h-9 w-9 place-items-center rounded-full text-zinc-900"
               aria-label="Open menu"
             >
@@ -294,8 +300,8 @@ export function Header({ title }: { title?: string }) {
       </nav>
 
       {showMobileMenu && (
-        <div className="fixed inset-0 z-40 bg-black/50 lg:hidden" onClick={() => setShowMobileMenu(false)}>
-          <div className="absolute left-4 right-4 top-16 w-auto rounded-lg border border-zinc-200 bg-white shadow-xl sm:left-auto sm:w-64" onClick={(e) => e.stopPropagation()}>
+        <div className="fixed inset-0 z-[60] bg-black/50 lg:hidden" onClick={() => setShowMobileMenu(false)}>
+          <div className="absolute left-4 right-4 top-20 w-auto rounded-lg border border-zinc-200 bg-white shadow-xl sm:left-auto sm:w-64" onClick={(e) => e.stopPropagation()}>
             <div className="border-b border-zinc-200 p-4">
               <div className="flex items-center gap-3">
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-orange-100 to-zinc-200 text-sm font-black">
