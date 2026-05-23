@@ -427,7 +427,7 @@ export default function CreateAssignmentPage() {
           )}
         </div>
 
-        <div className="mx-auto mt-8 flex flex-wrap max-w-4xl items-center justify-between gap-4 px-1">
+        <div className="mx-auto mt-8 flex flex-wrap max-w-4xl gap-3 px-1">
           <button
             type="button"
             onClick={() => router.back()}
