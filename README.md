@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VedaAI - AI Teacher Assessment & Grading Platform
 
-## Getting Started
+VedaAI is a full-stack, AI-powered platform built exclusively for teachers. It drastically reduces the time spent on administrative tasks by automatically generating structured question papers, lesson plans, and grading rubrics using state-of-the-art Large Language Models (LLMs).
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Automated Question Papers:** Generate structured question papers based on Subject, Class Level, and specific Question Types.
+- **Intelligent Routing:** Automatically routes complex mathematical queries to powerful 70B parameter models (Groq) and relies on precise numerical verification engines (Gemini) for 100% accuracy.
+- **Lesson Plan Generator:** Create detailed, week-by-week classroom instruction plans with objectives and required materials.
+- **AI Grading Helper:** Grade student answers instantly against predefined rubrics using critical thinking models.
+- **PDF Export:** Download cleanly formatted, ready-to-print PDFs with auto-generated Answer Keys.
+- **Cloud Synchronization:** All assignments, groups, and rubrics are saved seamlessly to MongoDB.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technology Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend:** Next.js 14 (App Router), React, Tailwind CSS
+- **Backend:** Next.js Serverless API Routes
+- **Database:** MongoDB (Mongoose)
+- **WebSockets:** Socket.IO (for real-time generation progress bars)
+- **Background Jobs:** BullMQ & Upstash Redis
+- **AI Providers:** Groq (Llama-3), Google Gemini 2.5 Flash
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚙️ Setup & Deployment (Render)
 
-## Learn More
+This application is fully optimized for deployment on [Render](https://render.com).
 
-To learn more about Next.js, take a look at the following resources:
+1. **Fork or Clone this repository.**
+2. **Create a new Web Service on Render** and connect your GitHub repository.
+3. **Configure Build Settings:**
+   - **Build Command:** `npm install && npm run build`
+   - **Start Command:** `npm run start`
+4. **Environment Variables:**
+   You **must** configure the following environment variables in your Render Dashboard (do not push your `.env.local` file):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```env
+   # Security
+   JWT_SECRET=your_secure_random_string
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   # Database (MongoDB)
+   MONGO_URI=mongodb+srv://<username>:<password>@cluster...
 
-## Deploy on Vercel
+   # Redis (Upstash) for background tasks
+   REDIS_URL=rediss://...
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   # AI Providers
+   GROQ_API_KEY=gsk_...
+   GEMINI_API_KEY=AIza...
+   OCR_API_KEY=...
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. **Deploy:** Click deploy. Render will automatically install dependencies, compile TypeScript, build the Next.js static pages, and start your WebSockets server.
+
+## 👨‍💻 Local Development
+
+To run this project locally on your machine:
+
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Create a `.env.local` file in the root directory and fill in your API keys (see above).
+4. Run `npm run dev` to start the local server.
+5. Open `http://localhost:3000` in your browser.
+
+---
+
+*Built with ❤️ for Educators.*
