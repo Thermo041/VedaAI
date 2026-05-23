@@ -79,7 +79,6 @@ export function AssignmentCard({ assignment }: { assignment: Assignment }) {
             className={cn(
               "absolute right-0 top-10 z-20 w-40 rounded-lg bg-white p-2 text-sm font-semibold shadow-2xl shadow-zinc-500/20 ring-1 ring-zinc-100 transition",
               "pointer-events-none invisible opacity-0",
-              "group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100",
               isMenuOpen && "pointer-events-auto visible opacity-100"
             )}
           >
