@@ -144,17 +144,17 @@ export default function LessonPlanPage() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+        <div className="mt-6 flex flex-wrap gap-3">
           <button
             onClick={() => router.back()}
-            className="w-full sm:flex-1 rounded-full border border-zinc-300 py-3 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50"
+            className="flex-1 whitespace-nowrap rounded-full border border-zinc-300 px-6 py-3 text-sm font-bold text-zinc-700 transition hover:bg-zinc-50"
           >
             Cancel
           </button>
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 py-3 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50"
+            className="flex-[2] whitespace-nowrap inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:opacity-50 min-w-[200px]"
           >
             <Sparkles className="h-5 w-5" />
             {isGenerating ? "Generating..." : "Generate Lesson Plan"}
@@ -165,13 +165,13 @@ export default function LessonPlanPage() {
           <div className="mt-6 rounded-lg border border-zinc-200 bg-zinc-50 p-6">
             <h3 className="mb-4 text-lg font-bold text-zinc-900">Generated Lesson Plan</h3>
             <pre className="whitespace-pre-wrap text-sm text-zinc-700">{generatedPlan}</pre>
-            <div className="mt-4 flex flex-col sm:flex-row gap-3">
+            <div className="mt-4 flex flex-wrap gap-3">
               <button
                 onClick={() => {
                   navigator.clipboard.writeText(generatedPlan);
                   alert("Copied to clipboard!");
                 }}
-                className="w-full sm:flex-1 rounded-full border border-orange-500 bg-white px-6 py-2 text-sm font-bold text-orange-600 transition hover:bg-orange-50"
+                className="flex-1 whitespace-nowrap rounded-full border border-orange-500 bg-white px-6 py-3 text-sm font-bold text-orange-600 transition hover:bg-orange-50 min-w-[150px]"
               >
                 Copy to Clipboard
               </button>
@@ -188,7 +188,7 @@ export default function LessonPlanPage() {
                   URL.revokeObjectURL(url);
                   addNotification(`Lesson plan downloaded`);
                 }}
-                className="w-full sm:flex-1 rounded-full bg-orange-500 px-6 py-2 text-sm font-bold text-white transition hover:bg-orange-600"
+                className="flex-[2] whitespace-nowrap rounded-full bg-orange-500 px-6 py-3 text-sm font-bold text-white transition hover:bg-orange-600 min-w-[200px]"
               >
                 Download
               </button>
