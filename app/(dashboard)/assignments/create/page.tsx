@@ -427,12 +427,12 @@ export default function CreateAssignmentPage() {
           )}
         </div>
 
-        <div className="mx-auto mt-8 flex max-w-4xl items-center justify-between gap-4 px-1">
+        <div className="mx-auto mt-8 flex flex-wrap max-w-4xl items-center justify-between gap-4 px-1">
           <button
             type="button"
             onClick={() => router.back()}
             disabled={isSubmitting}
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-base font-bold text-zinc-900 shadow-sm transition hover:bg-zinc-50 disabled:opacity-60"
+            className="flex-1 sm:flex-none justify-center whitespace-nowrap inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-base font-bold text-zinc-900 shadow-sm transition hover:bg-zinc-50 disabled:opacity-60 min-w-[140px]"
           >
             <ArrowLeft className="h-5 w-5" />
             Previous
@@ -441,7 +441,7 @@ export default function CreateAssignmentPage() {
             type="button"
             onClick={handleNext}
             disabled={isSubmitting}
-            className="inline-flex h-12 items-center gap-2 rounded-full bg-zinc-950 px-7 text-base font-bold text-white shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:bg-zinc-800 disabled:opacity-60"
+            className="flex-1 sm:flex-none justify-center whitespace-nowrap inline-flex h-12 items-center gap-2 rounded-full bg-zinc-950 px-7 text-base font-bold text-white shadow-xl shadow-black/15 transition hover:-translate-y-0.5 hover:bg-zinc-800 disabled:opacity-60 min-w-[140px]"
           >
             {isSubmitting ? "Generating..." : "Next"}
             <ArrowRight className="h-5 w-5" />
