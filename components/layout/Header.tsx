@@ -302,7 +302,7 @@ export function Header({ title }: { title?: string }) {
       {showMobileMenu && (
         <div className="fixed inset-0 z-[60] bg-black/50 lg:hidden" onClick={() => setShowMobileMenu(false)}>
           <div className="absolute left-4 right-4 top-20 w-auto rounded-lg border border-zinc-200 bg-white shadow-xl sm:left-auto sm:w-64" onClick={(e) => e.stopPropagation()}>
-            <div className="border-b border-zinc-200 p-4">
+            <div className="flex items-center justify-between border-b border-zinc-200 p-4">
               <div className="flex items-center gap-3">
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br from-orange-100 to-zinc-200 text-sm font-black">
                   {avatar}
@@ -312,6 +312,13 @@ export function Header({ title }: { title?: string }) {
                   <p className="text-xs text-zinc-500">{user?.school?.name || "Teacher"}</p>
                 </div>
               </div>
+              <button
+                onClick={() => setShowMobileMenu(false)}
+                className="grid h-8 w-8 place-items-center rounded-full text-zinc-500 hover:bg-zinc-100 transition"
+                aria-label="Close menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
             <div className="p-2">
               <Link
