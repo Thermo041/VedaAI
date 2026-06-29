@@ -22,7 +22,7 @@ export async function GET() {
 
   return NextResponse.json({
     ok: mongo && redis,
-    service: "vedaai-assessment-creator",
+    service: "VedamAI-assessment-creator",
     integrations: {
       mongo,
       redis,

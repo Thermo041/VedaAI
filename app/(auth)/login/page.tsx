@@ -49,7 +49,7 @@ function LoginForm() {
     <section className="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6">
       <div className="mb-8 text-center">
         <div className="relative mx-auto mb-4 h-16 w-16 overflow-hidden rounded-2xl bg-zinc-950 shadow-lg shadow-black/10">
-          <img src="/logo.png" alt="VedaAI" className="h-full w-full object-cover" />
+          <img src="/logo.png" alt="VedamAI" className="h-full w-full object-cover" />
         </div>
         <h1 className="text-3xl font-black text-zinc-900">Welcome back</h1>
         <p className="mt-2 text-sm font-medium text-zinc-500">

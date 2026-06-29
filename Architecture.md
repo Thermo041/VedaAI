@@ -1,4 +1,4 @@
-# VedaAI Architecture
+# VedamAI Architecture
 
 ## Product Flow
 

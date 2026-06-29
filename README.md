@@ -1,6 +1,6 @@
-# VedaAI - AI Teacher Assessment & Grading Platform
+# VedamAI - AI Teacher Assessment & Grading Platform
 
-VedaAI is a full-stack, AI-powered platform built exclusively for teachers. It drastically reduces the time spent on administrative tasks by automatically generating structured question papers, lesson plans, and grading rubrics using state-of-the-art Large Language Models (LLMs).
+VedamAI is a full-stack, AI-powered platform built exclusively for teachers. It drastically reduces the time spent on administrative tasks by automatically generating structured question papers, lesson plans, and grading rubrics using state-of-the-art Large Language Models (LLMs).
 
 ## 🚀 Features
 

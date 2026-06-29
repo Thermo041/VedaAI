@@ -8,7 +8,7 @@ export default function NotFound() {
         404
       </p>
       <h1 className="mt-3 text-4xl font-black tracking-tight text-zinc-900">
-        This VedaAI page is not a route
+        This VedamAI page is not a route
       </h1>
       <p className="mt-4 max-w-xl text-base leading-7 text-zinc-500">
         Use the app routes below. If you reached this from localhost, the server

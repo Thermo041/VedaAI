@@ -36,7 +36,7 @@ function routeLabel(pathname: string) {
   if (pathname.includes("/toolkit")) return "AI Teacher's Toolkit";
   if (pathname.includes("/library")) return "My Library";
   if (pathname.includes("/settings")) return "Settings";
-  return "VedaAI";
+  return "VedamAI";
 }
 
 function initials(name: string) {
@@ -164,9 +164,9 @@ export function Header({ title }: { title?: string }) {
         <div className="flex h-16 items-center justify-between px-4 lg:hidden">
           <Link href="/" className="flex items-center gap-2">
             <div className="relative h-8 w-8 overflow-hidden rounded-md bg-zinc-950">
-              <img src="/logo.png" alt="VedaAI" className="h-full w-full object-cover" />
+              <img src="/logo.png" alt="VedamAI" className="h-full w-full object-cover" />
             </div>
-            <span className="text-xl font-black tracking-tight">VedaAI</span>
+            <span className="text-xl font-black tracking-tight">VedamAI</span>
           </Link>
           <div className="flex items-center gap-2">
             <div className="relative">

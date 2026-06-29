@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "VedaAI - AI Assessment Creator",
+  title: "VedamAI - AI Assessment Creator",
   description: "Create AI-powered assessments for your students",
 };
 

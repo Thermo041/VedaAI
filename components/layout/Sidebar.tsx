@@ -52,9 +52,9 @@ export function Sidebar() {
     <aside className="no-print fixed left-4 top-4 z-30 hidden h-[calc(100vh-2rem)] w-72 flex-col rounded-lg border border-white/70 bg-white/90 p-5 shadow-2xl shadow-black/10 backdrop-blur-xl lg:flex">
       <Link href="/" className="flex items-center gap-3">
         <div className="relative h-11 w-11 overflow-hidden rounded-lg bg-zinc-950 shadow-lg shadow-black/20">
-          <img src="/logo.png" alt="VedaAI" className="h-full w-full object-cover" />
+          <img src="/logo.png" alt="VedamAI" className="h-full w-full object-cover" />
         </div>
-        <span className="text-3xl font-black tracking-tight text-zinc-900">VedaAI</span>
+        <span className="text-3xl font-black tracking-tight text-zinc-900">VedamAI</span>
       </Link>
 
       <Link
